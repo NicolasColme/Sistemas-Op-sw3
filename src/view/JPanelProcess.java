@@ -49,8 +49,9 @@ public class JPanelProcess extends JPanel implements ActionListener{
         labelDisBlock.setFont(new Font("Calibri",Font.PLAIN,18));
         this.labelBlock.setFont(new Font("Calibri",Font.PLAIN,18));
         labeldisList.setFont(new Font("Calibri",Font.PLAIN,18));
-        this.buttonDelete=new JButton(new ImageIcon("resources/x.png"));
-        this.buttonDelete.setBackground(Color.white);
+        this.buttonDelete=new JButton("Remover");
+        this.buttonDelete.setFont(new Font("Calibri",Font.BOLD,16));
+        this.buttonDelete.setBackground(Color.red);
         this.buttonDelete.setBorder(BorderFactory.createEmptyBorder(5,5,5,20));
         this.buttonDelete.addActionListener(this);
         this.buttonDelete.setActionCommand("D");
@@ -60,7 +61,10 @@ public class JPanelProcess extends JPanel implements ActionListener{
         p.add(labelDisBlock);
         p.add(labeldisList);
         this.add(p,BorderLayout.CENTER);
-        this.add(this.buttonDelete,BorderLayout.EAST);
+        JPanel panelbut =new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelbut.setBackground(Color.white);
+        panelbut.add(this.buttonDelete);
+        this.add(panelbut,BorderLayout.EAST);
     }
 
     @Override

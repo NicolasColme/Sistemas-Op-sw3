@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
 
 /**
  *
@@ -40,10 +41,13 @@ public class JPanelHeader extends JPanel{
         this.panelTitle.setLayout(new BoxLayout(this.panelTitle,BoxLayout.Y_AXIS));
         this.setBackground(new Color(242, 185, 12));
         this.labelLogo=new JLabel(new ImageIcon("resources/logo.png"));
-        this.buttonExit=new JButton(new ImageIcon("resources/x2.png"));
-        this.buttonExit.setBackground(new Color(242, 185, 12));
-        this.buttonExit.setBorder(new EmptyBorder(5,5,5,10));
-        this.buttonExit.setVerticalAlignment(SwingConstants.TOP);
+        this.buttonExit=new JButton("    Salir    ");
+        this.buttonExit.setBackground(Color.red);
+        this.buttonExit.setBorder(new MatteBorder(10,0,110,4,new Color(242, 185, 12)));
+        this.buttonExit.setFont(new Font("Calibri",Font.BOLD,24));
+        this.buttonExit.setVerticalTextPosition(SwingConstants.CENTER);
+        this.buttonExit.setForeground(Color.white);
+        this.buttonExit.setVerticalAlignment(SwingConstants.NORTH);
         this.buttonExit.addActionListener(control);
         this.buttonExit.setActionCommand("EXIT");
         this.init();

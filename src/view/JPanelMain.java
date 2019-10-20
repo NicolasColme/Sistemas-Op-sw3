@@ -68,9 +68,10 @@ public class JPanelMain extends JPanel{
     public void showReports(ArrayList<Proceso> cListos,ArrayList<Proceso> cEjecucion,ArrayList<Proceso> cBloqueados,ArrayList<Proceso> cSalida,ArrayList<Proceso> cDespachar,ArrayList<Proceso> cExpTiempo,ArrayList<Proceso> cBloquear,ArrayList<Proceso> cDespertar,ArrayList<Proceso> cComunica,ArrayList<Proceso> cDestruido){
         this.panelReports=new JPanelReports(control,cListos, cEjecucion, cBloqueados, cSalida, cDespachar, cExpTiempo, cBloquear, cDespertar,cComunica,cDestruido);
         this.remove(this.panelAgregates);
-        gbc.gridx=3;
+        this.remove(this.panelMenu);
+        gbc.gridx=0;
         gbc.gridy=1;
-        gbc.gridwidth=9;
+        gbc.gridwidth=12;
         gbc.gridheight=11;
         this.add(this.panelReports,gbc);
         this.updateUI();
@@ -97,12 +98,11 @@ public class JPanelMain extends JPanel{
         gbc.gridheight=11;
         this.add(this.panelAgregates,gbc);
         
-//        this.remove(this.panelSortProcess);
-//        gbc.gridx=0;
-//        gbc.gridy=1;
-//        gbc.gridwidth=3;
-//        gbc.gridheight=11;
-//        this.add(this.panelMenu,gbc);
+        gbc.gridx=0;
+        gbc.gridy=1;
+        gbc.gridwidth=3;
+        gbc.gridheight=11;
+        this.add(this.panelMenu,gbc);
         
         this.updateUI();
     }

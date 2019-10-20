@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -22,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
+import model.Proceso;
 
 /**
  *
@@ -90,6 +92,17 @@ public class JPanelMenu extends JPanel{
         }
         
         return v;
+    }
+    
+    public boolean validateName(ArrayList<Proceso> procesos){
+        boolean val = true;
+        for (int i = 0; i < procesos.size(); i++) {
+            if(procesos.get(i).getName().equals(this.tfName.getText())){
+                val=false;
+            }
+            
+        }
+        return val;
     }
     
     public void enableDisBlock(){
