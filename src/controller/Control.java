@@ -51,6 +51,7 @@ public class Control implements ActionListener{
         switch(ae.getActionCommand()){
             case "ADD":
                 if(this.jFrameMain.panelMain.panelMenu.validateFields()){
+                    if(this.jFrameMain.panelMain.panelMenu.validateName(procesosCreados)){
                     String[] info=this.jFrameMain.panelMain.panelMenu.getInfo();
                     this.jFrameMain.panelMain.panelAgregates.addProcess(info[0],info[1],info[2],info[3],info[4],this);
                     boolean isBlock=true;
@@ -74,6 +75,7 @@ public class Control implements ActionListener{
                         disList=false;
                     }
                 //procesosCreados.add(new Proceso(info[0],Integer.parseInt(info[1]),isBlock,isBlock,comunicate));
+                    }
                 }else{
                     this.dialogAlert=new JDialogAlert(this);
                     this.dialogAlert.setVisible(true);
